@@ -1,3 +1,6 @@
+HEROKU_EMAIL_ADDRESS=tobias.ramalho.ferreira@gmail.com
+
+
 # ----------------------------------
 #          INSTALL & TEST
 # ----------------------------------
