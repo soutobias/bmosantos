@@ -34,6 +34,6 @@ python-dotenv
 streamlit
 folium
 plotly
-treamlit_folium
+streamlit_folium
 
 
