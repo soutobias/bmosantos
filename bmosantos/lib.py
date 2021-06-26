@@ -37,6 +37,8 @@ def get_data(token):
            'wvdir1', 'flag_wvdir1', 'wvdir2', 'flag_wvdir2', 'wvspread1',
            'flag_wvspread1']]
 
+    df = df[(df['date_time'] < datetime(2021,6,23,13,0,0))|(df['date_time'] > datetime(2021,6,24,13,0,0))]
+
     return df
 
 def calculate_distance(df):

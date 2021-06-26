@@ -35,6 +35,7 @@ def adjust_data(df):
     df['spread_direction'] = pd.to_numeric(df['spread_direction'])
     df['date_time'] = pd.to_datetime(df['date_time'], format='%Y-%m-%dT%H:%M:%S.000Z')
     df.sort_values('date_time', inplace=True)
+    df[(df['date_time'] > datetime(2021,6,23,13,0,0))&(df['date_time'] < datetime(2021,6,24,13,0,0))] = np.nan
 
     df['values'] = pd.cut(df['period'], [2, 4, 7.5, 12, 18.4])
     df['wvdir'] = df['wvdir'].astype(float)
