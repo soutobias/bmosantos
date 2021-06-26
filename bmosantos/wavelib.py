@@ -15,7 +15,6 @@ def get_data(token):
 
     response = requests.get(url).json()
     df = pd.DataFrame(response)
-
     df = adjust_data(df.copy())
 
     df = create_norm(df.copy())
@@ -54,15 +53,16 @@ def create_norm(df):
     energy_norm = []
     values_norm = []
     for index, row in df.iterrows():
-        wvd  = np.arange(row['wvdir'] - 4.75, row['wvdir'] + 4.75, 0.4)
-        ener = norm.pdf(np.arange(-11,11 , 1),0,4.7) * row['energy'] * 80
-        ener = np.insert(ener,[0],[0])
-        ener = np.append(ener, [0])
-        for i in range(len(ener)):
-            date_time_norm.append(row['date_time'])
-            values_norm.append(row['values'])
-            wvdir_norm.append(wvd[i])
-            energy_norm.append(ener[i])
+        if row['date_time'].hour % 3 == 0:
+            wvd  = np.arange(row['wvdir'] - 4.75, row['wvdir'] + 4.75, 0.4)
+            ener = norm.pdf(np.arange(-11,11 , 1),0,4.7) * row['energy'] * 80
+            ener = np.insert(ener,[0],[0])
+            ener = np.append(ener, [0])
+            for i in range(len(ener)):
+                date_time_norm.append(row['date_time'])
+                values_norm.append(row['values'])
+                wvdir_norm.append(wvd[i])
+                energy_norm.append(ener[i])
 
     final_df = pd.DataFrame(np.array([date_time_norm, values_norm, wvdir_norm, energy_norm]).T, \
                         columns=['date_time', 'period', 'wvdir', 'energy'])
@@ -116,7 +116,7 @@ def plot_pleds(final_df):
     g.fig.subplots_adjust(hspace=-.9)
     # plt.legend(loc="lower left", ncol=5)
     label = ['2.0-4.0s', '4.0-7.5s', '7.5-12.0s', '12.0-18.4s']
-    plt.legend(bbox_to_anchor=(0.5, 8), loc=9, ncol=5, facecolor='white', \
+    plt.legend(bbox_to_anchor=(0.5, -0.3), loc=9, ncol=5, facecolor='white', \
                fontsize=30, markerscale=20, labels=label, title='Wave Period', \
               title_fontsize=20)
     # Remove axes details that don't play well with overlap
