@@ -9,7 +9,7 @@ from scipy.stats import norm
 
 def get_data(token):
 
-    start_time = (datetime.utcnow() - timedelta(days=10)).strftime('%Y-%m-%d')
+    start_time = (datetime.utcnow() - timedelta(days=5)).strftime('%Y-%m-%d')
     time_now = (datetime.utcnow() + timedelta(days=1)).strftime('%Y-%m-%d')
     url=f'http://143.198.233.67/api/v1/waves?buoy=2&start_date={start_time}&end_date={time_now}&token={token}'
 
