@@ -7,6 +7,7 @@ wheel>=0.29
 # data science
 numpy
 pandas
+scipy
 
 # tests/linter
 black
@@ -36,4 +37,7 @@ folium
 plotly
 streamlit_folium
 
+#PLOT
+matplotlib
+seaborn
 
