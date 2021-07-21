@@ -53,5 +53,5 @@ st.write("### Direção das correntes")
 lib.plot_graphs(df, ['cdir1', 'cdir2', 'cdir3'])
 
 
-st.write("### Espectro Direcional de ondas")
-wavelib.plot_pleds(wave_df)
+# st.write("### Espectro Direcional de ondas")
+# wavelib.plot_pleds(wave_df)
