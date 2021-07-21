@@ -13,7 +13,7 @@ df = lib.get_data(os.getenv('REMOBS_TOKEN'))
 raw_df = bmorawlib.get_data(os.getenv('REMOBS_TOKEN'))
 
 
-wave_df = wavelib.get_data(os.getenv('REMOBS_TOKEN'))
+# wave_df = wavelib.get_data(os.getenv('REMOBS_TOKEN'))
 
 df = lib.calculate_distance(df)
 
