@@ -1,4 +1,4 @@
-HEROKU_EMAIL_ADDRESS=tobias.ramalho.ferreira@gmail.com
+HEROKU_EMAIL_ADDRESS=soutobias@yahoo.com.br
 
 
 # ----------------------------------

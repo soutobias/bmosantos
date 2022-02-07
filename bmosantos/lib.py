@@ -14,7 +14,7 @@ def get_data(token):
 
     start_time = (datetime.utcnow() - timedelta(days=10)).strftime('%Y-%m-%d')
     time_now = (datetime.utcnow() + timedelta(days=1)).strftime('%Y-%m-%d')
-    url=f'http://remobsapi.herokuapp.com/api/v1/data_buoys?buoy=2&start_date={start_time}&end_date={time_now}&token={token}'
+    url=f'http://remobsapi.herokuapp.com/api/v1/data_buoys?buoy=22&start_date={start_time}&end_date={time_now}&token={token}'
 
     response = requests.get(url).json()
     df = pd.DataFrame(response)
