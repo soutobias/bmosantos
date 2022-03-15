@@ -59,7 +59,7 @@ def calculate_distance(df):
 
 def plot_map(df):
 
-    deployment_loc = [-22.8637, -40.1527]
+    deployment_loc = [-22.8152, -40.0939]
 
     m = folium.Map(location=deployment_loc, zoom_start=13)
 

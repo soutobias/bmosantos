@@ -17,7 +17,7 @@ raw_df = bmorawlib.get_data(os.getenv('REMOBS_TOKEN'))
 
 df = lib.calculate_distance(df)
 
-st.write("# DADOS BMO-BR BACIA DE SANTOS")
+st.write("# DADOS BMO-BR BACIA DE CAMPOS")
 st.write(f"### {(df['date_time'].min())} até {(df['date_time'].max())}")
 st.write(f"### Última posição: LAT {(df['lat'].iloc[-1])}, LON {(df['lon'].iloc[-1])}")
 
