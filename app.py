@@ -42,8 +42,8 @@ lib.plot_graphs(df, ['wdir'])
 
 st.write("### Altura de ondas")
 lib.plot_graphs(df, ['swvht1', 'swvht2'])
-st.write("### Direção de ondas")
-lib.plot_graphs(df, ['wvdir1', 'wvdir2'])
+# st.write("### Direção de ondas")
+# lib.plot_graphs(df, ['wvdir1', 'wvdir2'])
 st.write("### Período das ondas")
 lib.plot_graphs(df, ['tp1', 'tp2'])
 
