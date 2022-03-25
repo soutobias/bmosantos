@@ -40,30 +40,33 @@ st.markdown("<h2 style='text-align: center;'>GRÁFICOS</h2>", unsafe_allow_html=
 
 st.markdown("<h2 style='text-align: center;'>Dados Brutos de Vento</h2>", unsafe_allow_html=True)
 
-st.write("### Velocidade do vento")
+st.write("### Velocidade (m/s)")
 bmorawlib.plot_graphs(raw_df, {'wspd1':'Velocidade do Vento 3.6 m', 'wspd2': 'Velocidade do Vento 3.2 m'})
-st.write("### Direção do vento")
+st.write("### Direção (°)")
 bmorawlib.plot_graphs(raw_df, {'wdir1':'Direção do Vento 3.6 m', 'wdir2': 'Direção do Vento 3.2 m'})
 
 st.markdown("<h2 style='text-align: center;'>Melhor Vento</h2>", unsafe_allow_html=True)
 
-st.write("### Velocidade do vento")
+st.write("### Velocidade (m/s)")
 lib.plot_graphs(df, {'wspd':'Velocidade do Vento 10 m'})
-st.write("### Direção do vento")
+st.write("### Direção (°)")
 lib.plot_graphs(df, {'wdir':'Direção do Vento 10 m'})
 
-st.markdown("<h2 style='text-align: center;'>Altura de Ondas</h2>", unsafe_allow_html=True)
 
+st.markdown("<h2 style='text-align: center;'>Ondas</h2>", unsafe_allow_html=True)
+
+st.write("### Altura Significativa (m)")
 lib.plot_graphs(df, {'swvht1':'Triaxys', 'swvht2':'UCMO-Messen'})
 # st.write("### Direção de ondas")
 # lib.plot_graphs(df, ['wvdir1', 'wvdir2'])
-st.write("### Período das ondas")
+st.write("### Período de Pico (s)")
 lib.plot_graphs(df, {'tp1':'Triaxys', 'tp2':'UCMO-Messen'})
 
 st.markdown("<h2 style='text-align: center;'>Intensidade das Correntes</h2>", unsafe_allow_html=True)
 
+st.write("### Intensidade (m/s)")
 lib.plot_graphs(df, {'cspd1':'Velocidade Correntes 4.5 m', 'cspd2':'Velocidade Correntes 7.5 m', 'cspd3':'Velocidade Correntes 10.5 m'})
-st.write("### Direção das correntes")
+st.write("### Direção (°)")
 lib.plot_graphs(df, {'cdir1':'Direção Correntes 4.5 m', 'cdir2':'Direção Correntes 7.5 m', 'cdir3':'Direção Correntes 10.5 m'})
 
 # st.write("### Espectro Direcional de ondas")
