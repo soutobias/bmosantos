@@ -35,9 +35,9 @@ def get_data(token):
 def plot_graphs(df, variables):
 
     fig = go.Figure()
-    for variable in variables:
-        fig.add_trace(go.Scatter(x=df['date_time'], y=df[variable],
+    for key, value in variables.items():
+        fig.add_trace(go.Scatter(x=df['date_time'], y=df[key],
                             mode='lines',
-                            name=variable))
+                            name=value))
     st.plotly_chart(fig)
 

@@ -59,7 +59,7 @@ def calculate_distance(df):
 
 def plot_map(df):
 
-    deployment_loc = [-22.8152, -40.0939]
+    deployment_loc = [-22.810508, -40.094289]
 
     m = folium.Map(location=deployment_loc, zoom_start=13)
 
@@ -80,12 +80,12 @@ def plot_map(df):
 def plot_graphs(df, variables):
 
     fig = go.Figure()
-    for variable in variables:
-        name = f"flag_{variable}"
-        df.loc[df[name] > 0, variable] = np.nan
-        fig.add_trace(go.Scatter(x=df['date_time'], y=df[variable],
+    for key, value in variables.items():
+        name = f"flag_{key}"
+        df.loc[df[name] > 0, key] = np.nan
+        fig.add_trace(go.Scatter(x=df['date_time'], y=df[key],
                             mode='lines',
-                            name=variable))
+                            name=value))
     st.plotly_chart(fig)
 
 if __name__ == "__main__":
